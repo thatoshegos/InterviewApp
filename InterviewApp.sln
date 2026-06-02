@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11822.322 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewApp", "InterviewApp\InterviewApp.csproj", "{AA8CCC16-A151-4833-88F0-2D1BD6149EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{691E94FD-A8E8-4C56-B25A-716DFA80DF5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA8CCC16-A151-4833-88F0-2D1BD6149EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8CCC16-A151-4833-88F0-2D1BD6149EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8CCC16-A151-4833-88F0-2D1BD6149EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8CCC16-A151-4833-88F0-2D1BD6149EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691E94FD-A8E8-4C56-B25A-716DFA80DF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691E94FD-A8E8-4C56-B25A-716DFA80DF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691E94FD-A8E8-4C56-B25A-716DFA80DF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691E94FD-A8E8-4C56-B25A-716DFA80DF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4E9DE42-AB15-4C9A-A55F-9C8B4C0900B5}
+	EndGlobalSection
+EndGlobal

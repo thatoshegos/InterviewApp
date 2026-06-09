@@ -1,6 +1,8 @@
-﻿namespace InterviewApp.Services;
+﻿using System.Threading.Tasks;
+
+namespace InterviewApp.Services;
 
 public interface IGreetingService
 {
-    void Run();
+    Task RunAsync();
 }

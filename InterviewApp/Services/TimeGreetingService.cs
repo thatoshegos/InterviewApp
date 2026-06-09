@@ -4,9 +4,19 @@ namespace InterviewApp.Services;
 
 public class TimeGreetingService : ITimeGreetingService
 {
+    private readonly TimeProvider _timeProvider;
+
+    public TimeGreetingService() : this(TimeProvider.System)
+    {
+
+    }
+    public TimeGreetingService(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
     public string GetTimeBasedGreeting()
     {
-        var hour = DateTime.Now.Hour;
+        var hour = _timeProvider.GetLocalNow().Hour;
 
         return hour switch
         {

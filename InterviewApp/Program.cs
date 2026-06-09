@@ -53,39 +53,8 @@ class Program
             })
             .Build();
 
-        // Validate configuration before running
-        try
-        {
-            var configuration = host.Services.GetRequiredService<Microsoft.Extensions.Options.IOptions<GreetingOptions>>();
-            var greetingOptions = configuration.Value;
-
-            var logger = host.Services.GetRequiredService<ILogger<Program>>();
-
-            if (string.IsNullOrWhiteSpace(greetingOptions.Message))
-            {
-                logger.LogError("Greeting message is not configured in appsettings.json");
-                Console.WriteLine("Error: Greeting message is missing from configuration.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(greetingOptions.Language))
-            {
-                logger.LogError("Language is not configured in appsettings.json");
-                Console.WriteLine("Error: Language is missing from configuration.");
-                return;
-            }
-
-            logger.LogInformation("Application started with Language: {Language}, Message: {Message}",
-                greetingOptions.Language, greetingOptions.Message);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Configuration error: {ex.Message}");
-            return;
-        }
-
         var greetingService = host.Services.GetRequiredService<IGreetingService>();
-        greetingService.Run();
+        await greetingService.RunAsync();
 
         await host.RunAsync();
     }

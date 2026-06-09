@@ -59,8 +59,8 @@ public class GreetUserHandler : IRequestHandler<GreetUserCommand, string>
         return language.ToLower() switch
         {
             "english" => defaultMessage,
-            "afrikaans" => "Welkom by die onderhoud toep!",
-            "zulu" => "Uyemukelwe kuhlelo lokuxoxisana!",
+            "afrikaans" => defaultMessage,
+            "zulu" => defaultMessage,
             _ => HandleUnsupportedLanguage(language, defaultMessage)
         };
     }

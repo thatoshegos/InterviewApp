@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using InterviewApp.Models;
 using MediatR;
 using InterviewApp.Commands;
+using System.Threading.Tasks;
 
 namespace InterviewApp.Services
 {
@@ -20,7 +21,7 @@ namespace InterviewApp.Services
             _mediator = mediator;
         }
 
-        public async void Run()
+        public async Task RunAsync()
         {
             _logger.LogInformation("Greeting Service started");
 

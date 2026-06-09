@@ -1,14 +1,15 @@
-﻿using System;
+﻿using InterviewApp.Commands;
+using InterviewApp.Handlers;
+using InterviewApp.Queries;
+using InterviewApp.Services;
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Time.Testing;
+using Moq;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using InterviewApp.Commands;
-using InterviewApp.Handlers;
-using InterviewApp.Services;
-using Microsoft.Extensions.Logging;
-using MediatR;
-using Moq;
 using Xunit;
-using InterviewApp.Queries;
 
 namespace InterviewApp.Tests;
 
@@ -88,11 +89,14 @@ public class GreetingServiceTests
     public void TimeGreetingService_ReturnsCorrectGreetingForTimeOfDay()
     {
         // Arrange
-        var service = new TimeGreetingService();
+        // Arrange
+        var fakeTimeProvider = new FakeTimeProvider();
+        fakeTimeProvider.SetUtcNow(new DateTime(2026, 6, 9, 1, 0, 0));
+        var service = new TimeGreetingService(fakeTimeProvider);
 
         // Act & Assert - This test's assertion depends on current time
         var result = service.GetTimeBasedGreeting();
         Assert.NotNull(result);
-        Assert.Contains(result, new[] { "Good morning", "Good afternoon", "Good evening", "Good night" });
+        Assert.Equal("Good night", result);
     }
 }
